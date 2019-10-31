@@ -31,7 +31,7 @@ values('$acc','$pw','$name','$addr','$tel','$birthday','$email')";
 echo "sql語法是".$sql;
 
 //$pdo->exec($sql)  用在不需要回傳資料的場景  del,update,insert
-echo $pdo->exec($sql);  //echo 可省略
+// echo $pdo->exec($sql);  //echo 可省略
 
 if($pdo->exec($sql)){
     //echo "新增資料成功";
