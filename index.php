@@ -9,6 +9,9 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+test
+test
+
 <?php 
 if(!empty($_GET['s'])){
   echo " 註冊成功，請輸入帳密已登入";
