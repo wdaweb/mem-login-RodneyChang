@@ -18,7 +18,8 @@ echo "pw=".$pw;
 $dsn="mysql:host=localhost;charset=utf8;dbname=mydb";
 $pdo=new PDO($dsn,'root','');
 
-$sql="select count(*) as 'r' from user where acc='$acc' && pw='$pw'";
+// $sql="select count(*) as 'r' from user where acc='$acc' && pw='$pw'";
+$sql="select id  from user where acc='$acc' && pw='$pw'";
 
 //$data=$pdo->query($sql)->fetchColumn();
 $data=$pdo->query($sql)->fetch();
@@ -31,13 +32,21 @@ print_r($data);
 // }
 
 
-if($data['r']==1){
+// if($data['r']==1){
+//   echo "登入成功";
+//   header("location:member_center.php");
+// }else{
+//   echo "登入失敗";
+//   header("location:index.php?err=1");
+// }
+
+if(!empty($data)){
   echo "登入成功";
+  header("location:member_center.php?id=".$data['id']);
 }else{
   echo "登入失敗";
+  header("location:index.php?err=1");
 }
-
-
 
 // if($data){
 //   echo "登入成功";

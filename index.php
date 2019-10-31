@@ -9,14 +9,15 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-test
-test
 
 <?php 
 if(!empty($_GET['s'])){
   echo " 註冊成功，請輸入帳密已登入";
 }
 
+if(!empty($_GET['err'])){
+  echo "<h2>帳號或密碼錯誤</h2>";
+}
 ?>
   <h1>會員登入</h1>
 <form action="login_api.php" method="post"> 
