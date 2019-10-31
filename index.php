@@ -18,6 +18,10 @@ if(!empty($_GET['s'])){
 if(!empty($_GET['err'])){
   echo "<h2>帳號或密碼錯誤</h2>";
 }
+
+include "header.php";
+//include("")
+
 ?>
   <h1>會員登入</h1>
 <form action="login_api.php" method="post"> 
