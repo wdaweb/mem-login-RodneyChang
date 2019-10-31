@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(!empty($_COOKIE['login'])){
+  header("location:member_center.php");
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,10 +23,7 @@
 //   header("location:member_center.php");
 // }
 
-session_start();
-if(!empty($_GET['login'])){
-  header("location:member_center.php");
-  }
+
 if(!empty($_GET['s'])){
   echo " 註冊成功，請輸入帳密已登入";
 }

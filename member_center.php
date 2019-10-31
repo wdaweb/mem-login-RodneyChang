@@ -3,7 +3,7 @@ include_once  "base.php";
 ?>
 
 <?php
-if(empty($_SESSION['login'])){
+if(empty($_COOKIE['login'])){
   exit();
 }
 ?>
@@ -34,7 +34,6 @@ if(empty($_SESSION['login'])){
     <div class="wellcome">
     <?include "header.php";?>
 
-
       HI! 歡迎光臨!以下是你的個人資料:
     </div>
     <div class="private">
@@ -44,7 +43,7 @@ if(empty($_SESSION['login'])){
         // $dsn="mysql:host=localhost;charset=utf8;dbname=mydb";
         // $pdo=new PDO($dsn,'root','');
 
-        $sql=" select * from user where id=' ".$_SESSION['id']." ' ";
+        $sql=" select * from user where id=' ".$_COOKIE['id']." ' ";
       
       //  echo $sql;
        $user=$pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
@@ -88,7 +87,7 @@ if(empty($_SESSION['login'])){
 
     </div>
 
-    <!-- <a href="index.php">回首頁</a> -->
+    <a href="index.php">回首頁</a>
 
   </div>
 </body>
