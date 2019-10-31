@@ -11,6 +11,15 @@
 <body>
 
 <?php 
+// if(!empty($_GET['login'])){
+
+//   header("location:member_center.php");
+// }
+
+session_start();
+if(!empty($_GET['login'])){
+  header("location:member_center.php");
+  }
 if(!empty($_GET['s'])){
   echo " 註冊成功，請輸入帳密已登入";
 }
@@ -19,7 +28,9 @@ if(!empty($_GET['err'])){
   echo "<h2>帳號或密碼錯誤</h2>";
 }
 
-include "header.php";
+
+
+// include "header.php";
 //include("")
 
 ?>

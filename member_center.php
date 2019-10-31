@@ -1,4 +1,12 @@
-<? include  "base.php";?>
+<?php
+include_once  "base.php";
+?>
+
+<?php
+if(empty($_SESSION['login'])){
+  exit();
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -25,6 +33,8 @@
   <div class="member">
     <div class="wellcome">
     <?include "header.php";?>
+
+
       HI! 歡迎光臨!以下是你的個人資料:
     </div>
     <div class="private">
@@ -34,7 +44,7 @@
         // $dsn="mysql:host=localhost;charset=utf8;dbname=mydb";
         // $pdo=new PDO($dsn,'root','');
 
-        $sql="select * from user where id='".$_GET['id']."'";
+        $sql=" select * from user where id=' ".$_SESSION['id']." ' ";
       
       //  echo $sql;
        $user=$pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
@@ -77,6 +87,9 @@
 
 
     </div>
+
+    <!-- <a href="index.php">回首頁</a> -->
+
   </div>
 </body>
 </html>
